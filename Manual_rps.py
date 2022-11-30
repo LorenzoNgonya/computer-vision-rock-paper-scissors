@@ -1,15 +1,16 @@
 
 import random # imports random modulde 
 
+choices = ['r', 'p', 's']
 def get_computer_choice():  #gets the computer choice randomly 
     computer_choice = random.choice (['r', 'p' ,'s'])
-    print (computer_choice)
+    return computer_choice
 
 
 def get_user_choice(): # gets the users choices 
     user_choice = input("What's your choice? 'r' for rock, 'p' for paper, 's' for scissors\n")
     user_choice = user_choice.lower()
-    print (user_choice)
+    return user_choice
 
 def get_winner(get_computer_choice, get_user_choice):
     while True:
