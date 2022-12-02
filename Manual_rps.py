@@ -24,13 +24,26 @@ def get_winner(computer_choice, user_choice):
         print ("You won!")
     elif user_choice == "scissors" and computer_choice == "paper":
         print ("You won!")
-    #else:
+    else:
         print ("You lost")
     #break
 
+ #if get_user_choice == "paper":
+  ##          if get_computer_choice == "rock":
+    #            print ("You won!")
+     #   elif get_computer_choice == "scissors":
+      #          print ("You lost")
+       #         
+        
+         #   if get_computer_choice == "paper":
+        #if get_user_choice == "scissors":
+         #       print ("You won!")
+        #elif get_computer_choice == 'rock':
+         #       print ("You lost")
+        #break
+
         
        
-
             
             
 def play():
