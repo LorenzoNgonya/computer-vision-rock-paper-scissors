@@ -2,7 +2,6 @@ import random
 
 def get_computer_choice():
     computer_choice = random.choice(["rock", "paper", "scissors"])
-    #
     return computer_choice
 
 def get_user_choice():
