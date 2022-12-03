@@ -1,60 +1,41 @@
+import random
 
-import random # imports random module 
-
-
-
-def get_computer_choice():  #
-    #"""function that gets the computer's choice randomly """
-    computer_choice = random.choice (["rock", "paper", "scissors"])
+def get_computer_choice():
+    computer_choice = random.choice(["rock", "paper", "scissors"])
+    #
     return computer_choice
 
-
 def get_user_choice():
-    #"""function that gets the user's choices"""
-    user_choice =  input ("What's your choice?(rock, paper, scissors)")
-    user_choice = user_choice.lower()
+    user_choice =  input("What's your choice? (rock, paper, scissors)").lower()
+    print(user_choice)
     return user_choice
-    
-    
 
-def get_winner(computer_choice, user_choice):
-    computer_choice = get_computer_choice
-    user_choice = get_user_choice
-    print (computer_choice)
+def get_winner(user_choice, computer_choice):
+    if user_choice == computer_choice:
+        print ("It's a draw!")
+        return print (" You both chose {}.".format(user_choice))
     if user_choice == "rock" and computer_choice == "scissors":
-        print ("You won!")
-    elif user_choice == "paper" and computer_choice == "rock":
-        print ("You won!")
-        ###break
-    elif user_choice == "scissors" and computer_choice == "paper":
-        print ("You won!")
-        #break
+        print("You won!")
+        return print ("computer chose {}.:".format (computer_choice))
+    if user_choice == "paper" and computer_choice == "rock":
+        print("You won!")
+        return print ("computer chose {}.:".format (computer_choice))
+    if user_choice == "scissors" and computer_choice == "paper":
+        print("You won!")
+        return print ("computer chose {}.:".format (computer_choice))
     else:
-        print ("You lost")
-  
-    #break
+        print("You lost")
+        return print ("computer chose {}.:".format (computer_choice))
 
- #if get_user_choice == "paper":
-  ##          if get_computer_choice == "rock":
-    #            print ("You won!")
-     #   elif get_computer_choice == "scissors":
-      #          print ("You lost")
-       #         
-        
-         #   if get_computer_choice == "paper":
-        #if get_user_choice == "scissors":
-         #       print ("You won!")
-        #elif get_computer_choice == 'rock':
-         #       print ("You lost")
-        #break
-
-        
-       
-            
-            
 def play():
-    get_computer_choice()
-    get_user_choice()
-    get_winner(get_user_choice,get_computer_choice)
+    while True:
+        computer_choice = get_computer_choice()
+        user_choice = get_user_choice()
+        get_winner(user_choice, computer_choice)
+
+        # Ask the user if they want to play again
+        again = input("Do you want to play again? (y/n) ").lower()
+        if again != "y":
+            break
 
 play()
