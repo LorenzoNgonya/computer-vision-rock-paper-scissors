@@ -64,5 +64,9 @@ Milestone 4
 
 Milestone 5
 ---
-![](.png)
-![](.png)
+- I this task I had to create a new file called camera_rps.py where the new code, to replace the hard-coded user guess with the output of the computer vision model. To acheive this I created a new function called get_prediction and placed the code from CV in the body of this function so it will return the output of the model.
+
+- In this task I had to add a counter that will count down for the user to show their choice. To achieve this I had to import the time module and set up a count timer in the body of the get prediction method. By using the following variables: start, end_time and countdown I was able to create a countdown that will display show your hand in {seconds} to the user. When the countdown gets to zero it will command the user to present their choice.
+
+- In this task i wrote code for the game to be repeated until either the computer or the user wins three rounds. To achieve this I initialised the class with the following attributes: computer_wins and user_wins set at zero. Then in get winner i returned the winner with a value of added to the attribute. I then coded for the for the game to end when either the user or the computer has accumulated 3 points.
+
