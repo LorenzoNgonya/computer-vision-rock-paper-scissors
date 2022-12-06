@@ -22,8 +22,8 @@ class CV_RPS:
         model = load_model('keras_model.h5')
         data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
         start = time.time()
-        end_time = start + 4
-        countdown = start + 3
+        end_time = start + 6
+        countdown = start + 4
         cap = cv2.VideoCapture(0)
 
         while time.time() < end_time:
@@ -45,9 +45,6 @@ class CV_RPS:
                 print ("Show your hand!")
                 break
  
-            time.sleep(1)
-            counter -= 1
-            print('Show your hand!')
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
             # Press q to close the window
@@ -61,7 +58,7 @@ class CV_RPS:
             cv2.destroyAllWindows()
             return prediction
             
-        if prediction[0][0] > 0.5:
+        if prediction[0][0] > 0.8:
             return "Rock"
         elif prediction[0][1] > 0.5:
             return "Paper"
@@ -93,7 +90,7 @@ class CV_RPS:
 
     def play(self):
         while not self.end:
-            computer_choice = self.get_computer_choice(list_choices)
+            computer_choice = self.get_computer_choice()
             user_choice = self.get_prediction()
             self.get_winner(user_choice, computer_choice)
 
@@ -104,5 +101,5 @@ class CV_RPS:
                 print('Game Over!\nYou Win!')
                 self.end = True
 
-game = CV_RPS(list_choices)
+game = CV_RPS()
 game.play()
